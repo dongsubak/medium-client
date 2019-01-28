@@ -31,11 +31,12 @@ class Editor extends Component {
     formdata.append('author_id', this.props.user._id)
     formdata.append('description', this.state.description)
     formdata.append('claps', 0)
+    console.log("formdata",formdata
     axios.post(`${_url}article`,formdata).then((res) => {
       this.setState({
         loading: false
       })
-    }).catch((err)=>{console.log(err); this.setState({loading: false})})
+    }).catch((err)=>{console.log('postarticleclienterror',err); this.setState({loading: false})})
   } 
   handleClick() {
     this.refs.fileUploader.click()
