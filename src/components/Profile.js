@@ -19,7 +19,7 @@ class Profile extends Component {
     render() {
         return ( 
             <div>
-            {Object.keys(this.props.profile).length > 0 ? <ItemList items ={this.props} /> : ''}
+            {(Object.keys(this.props.profile).length > 0) ? <ItemList items ={this.props} /> : ''}
             </div>
         );
     }
@@ -68,9 +68,9 @@ function ItemList ({items}) {
                         </div>
                     </div>
 
-                    {article.feature_img.length > 0 ? <div className="post-picture-wrapper">
-                        <img src={article.feature_img} alt="alt"/>
-                    </div> : ''}
+                    {(article.feature_img.length > 0) ? <div className="post-picture-wrapper">
+                        <img src={article.feature_img} alt="alt"/> </div> 
+                    : ''}
                     <div className="main-body">
                         <h3 className="post-title"><a href={`/articleview/${article._id}`}>{article.title}</a></h3>
                         <div className="post-body">
