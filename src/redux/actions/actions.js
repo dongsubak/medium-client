@@ -47,6 +47,7 @@ export function comment() {
 
 export function clap(article_id) {
   return (dispatch) => {
+    console.log('clapping...')
     axios.post(`${url}article/clap`,{ article_id }).
     then((res) => {
       dispatch({type:'CLAP_ARTICLE'})
@@ -56,6 +57,7 @@ export function clap(article_id) {
 
 export function follow(id, user_id) {
   return (dispatch) => {
+    console.log(`${id} following ${user_id}`)
     axios.post(`${url}user/follow`,{ id, user_id }).
     then((res) => {
       dispatch({type:'FOLLOW_USER', user_id})
@@ -65,6 +67,7 @@ export function follow(id, user_id) {
 
 export function SignInUser(user_data) {
   return (dispatch) => {
+    console.log('adding us..')
     axios.post(`${url}user`, user_data).
     then((res) => {
       let user = res.data
