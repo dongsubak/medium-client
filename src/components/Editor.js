@@ -22,7 +22,8 @@ class Editor extends Component {
     this.setState({
       loading: true
     })
-    const _url = process.env.NODE_ENV === 'production' ? "/api/" : "http://shopping-react-native-expo.herokuapp.com:5000/api/"
+    //const _url = process.env.NODE_ENV === 'production' ? "/api/" : 
+    const _url = http://shopping-react-native-expo.herokuapp.com/api/"
     const formdata = new FormData()
     formdata.append('text', this.state.text)
     formdata.append('image', this.state.imgSrc)
@@ -36,10 +37,10 @@ class Editor extends Component {
       })
     }).catch((err)=>{console.log(err); this.setState({loading: false})})
   } 
-  handleClick () {
+  handleClick() {
     this.refs.fileUploader.click()
   }
-  previewImg () {
+  previewImg() {
     const file = this.refs.fileUploader.files[0]
     var reader = new FileReader()
     reader.onload = function (e) {
@@ -50,7 +51,7 @@ class Editor extends Component {
     }.bind(this)
     reader.readAsDataURL(file)
   }
-  componentDidMount () {
+  componentDidMount() {
     const editor = new MediumEditor(/*dom, */".medium-editable",{ 
         autoLink: true,
         delay: 1000,
