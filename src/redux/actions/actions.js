@@ -1,6 +1,6 @@
 import axios from 'axios'
 // const url = process.env.NODE_ENV === 'production' ? "/api/" : 
-const url = "http://shopping-react-native-expo.herokuapp.com:5000/api/"
+const url = "https://shopping-react-native-expo.herokuapp.com:5000/api/"
 
 export function loadArticles() {
   return (dispatch) => {
