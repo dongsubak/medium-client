@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { GoogleLogin } from 'react-google-login';
+import GoogleLogin from 'react-google-login';
 import { 
     SignInUser,
     toggleClose,
@@ -18,6 +18,7 @@ class SignInWith extends Component {
             token: res.Zi.access_token,
             provider_pic: res.w3.Paa
         }
+        
         console.log(postData)
         // build our user data
         this.props.SignInUser(postData)
@@ -33,6 +34,8 @@ class SignInWith extends Component {
                 <li className="omniauth-button google">
                     <GoogleLogin className="button google"
                     clientId={clientId}
+                    uxMode="redirect"
+                    redirectUri="https://determined-knuth-ef5e22.netlify.com/"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle} >
                         <i className="fa fa-google"></i><span> SignIn with Google</span>
