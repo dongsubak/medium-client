@@ -23,7 +23,7 @@ class Editor extends Component {
       loading: true
     })
     //const _url = process.env.NODE_ENV === 'production' ? "/api/" : 
-    const _url = http://shopping-react-native-expo.herokuapp.com/api/"
+    const _url = "http://shopping-react-native-expo.herokuapp.com/api/"
     const formdata = new FormData()
     formdata.append('text', this.state.text)
     formdata.append('image', this.state.imgSrc)
