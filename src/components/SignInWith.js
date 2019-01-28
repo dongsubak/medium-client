@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import GoogleLogin from 'react-google-login';
+import { connect } from 'react-redux'
+import GoogleLogin from 'react-google-login'
 import { 
     SignInUser,
     toggleClose,
     toggleOpen
  } from './../redux/actions/actions'
+
 class SignInWith extends Component {
+
     render() {
     const clientId = '103020549439-77a5etpjv17obou3of3vb28tji5qb1eh.apps.googleusercontent.com'
     const responseGoogle = (res) => {
@@ -18,12 +20,12 @@ class SignInWith extends Component {
             token: res.Zi.access_token,
             provider_pic: res.w3.Paa
         }
-        
         console.log(postData)
         // build our user data
         this.props.SignInUser(postData)
         this.props.toggleClose()
     }
+
         return ( 
             <div>
                 <div data-behavior="overlay" className={this.props.modalMode === true ? 'overlay overlay-hugeinc open' : 'overlay overlay-hugeinc'}>
@@ -31,16 +33,16 @@ class SignInWith extends Component {
         <nav>
             <h2 className="grayed-heading center">Sign In</h2>
             <ul className="omniauth-button-group">
+
                 <li className="omniauth-button google">
                     <GoogleLogin className="button google"
-                    clientId={clientId}
-                    uxMode="redirect"
-                    redirectUri="https://determined-knuth-ef5e22.netlify.com/"
+                    clientId=""
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle} >
                         <i className="fa fa-google"></i><span> SignIn with Google</span>
                     </GoogleLogin>
                 </li>
+
             </ul>
         </nav>
     </div>
@@ -53,6 +55,7 @@ const mapStateToProps = state => {
         modalMode: state.common.modalMode
     }
 }
+
 export default connect(mapStateToProps, {
     toggleClose,
     toggleOpen,
