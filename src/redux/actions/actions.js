@@ -63,7 +63,7 @@ export function follow(id, user_id) {
   }
 }
 
-export function SignInUser (user_data) {
+export function SignInUser(user_data) {
   return (dispatch) => {
     axios.post(`${url}user`, user_data).
     then((res) => {
