@@ -22,6 +22,8 @@ class Editor extends Component {
     this.setState({
       loading: true
     })
+    console.log('state',this.state)  
+    console.log('publishing...')
     //const _url = process.env.NODE_ENV === 'production' ? "/api/" : 
     const _url = "http://shopping-react-native-expo.herokuapp.com/api/"
     const formdata = new FormData()
@@ -39,9 +41,11 @@ class Editor extends Component {
     }).catch((err)=>{console.log('postarticleclienterror',err); this.setState({loading: false})})
   } 
   handleClick() {
+    console.log('clicked')
     this.refs.fileUploader.click()
   }
   previewImg() {
+    console.log('preview')
     const file = this.refs.fileUploader.files[0]
     var reader = new FileReader()
     reader.onload = function (e) {
