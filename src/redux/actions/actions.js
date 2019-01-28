@@ -68,6 +68,9 @@ export function SignInUser (user_data) {
     axios.post(`${url}user`, user_data).
     then((res) => {
       let user = res.data
+      console.log('==================signin=======')
+      console.log(user)
+      console.log('==================signin=======')
       localStorage.setItem('Auth', JSON.stringify(user))
       dispatch({type:'SET_USER', user})
     }).catch((err) => console.log(err))
