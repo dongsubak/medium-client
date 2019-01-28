@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import { 
     SignInUser,
     toggleClose,
