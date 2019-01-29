@@ -8,12 +8,12 @@ const cloudinary = require('cloudinary')
 
 const app = express()
 const router = express.Router()
-const url = process.env.MONGODB_URI || "mongodb://dsp:ehdtnqkr1@ds040877.mlab.com:40877/dsp"
+const url = process.env.MONGODB_URI || "mongodb://"
 
 cloudinary.config({
-    cloud_name: 'dongsubak',
-    api_key: '451329238326579',
-    api_secret: 'yH_PDGHf61ok84CHu9iDrKY0XB8'
+    cloud_name: '',
+    api_key: '',
+    api_secret: ''
 })
 
 /** connect to MongoDB datastore */
