@@ -15,7 +15,7 @@ class App extends Component {
     const pathname = window.location.pathname
     return (
       <div>
-
+      { (pathname.includes('editor')) ? "" : <Header /> }
       <SignInWith />
           <Switch>
             <Route exact path="/" component={Feed} />
@@ -30,5 +30,3 @@ class App extends Component {
 }
 
 export default App;
-//        { !pathname.includes('editor') ? <Header /> : '' }
-
