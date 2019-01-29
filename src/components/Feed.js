@@ -66,7 +66,7 @@ class Feed extends Component {
                             { articles }
                         </div>
                     </div>
-                    //{this.props.articles ? <AsideFeed _articles={this.props.articles} /> : ''}
+                    {this.props.articles ? '' : ''}
                 </div>
             </div>
         );
@@ -74,3 +74,4 @@ class Feed extends Component {
     }
 }
 export default connect(mapStateToProps, { loadArticles })(Feed);
+//{this.props.articles ? <AsideFeed _articles={this.props.articles} /> : ''}
