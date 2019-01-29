@@ -66,11 +66,11 @@ class Feed extends Component {
                             { articles }
                         </div>
                     </div>
-                    {this.props.articles ? '' : ''}
+                    //{this.props.articles ? <AsideFeed _articles={this.props.articles} /> : ''}
                 </div>
             </div>
         );
-        //{this.props.articles ? <AsideFeed _articles={this.props.articles} /> : ''}
+        
     }
 }
 export default connect(mapStateToProps, { loadArticles })(Feed);
