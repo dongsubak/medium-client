@@ -13,12 +13,12 @@ class SignInWith extends Component {
     const clientId = '103020549439-77a5etpjv17obou3of3vb28tji5qb1eh.apps.googleusercontent.com'
     const responseGoogle = (res) => {
         let postData = {
-            name: res.w3.ig,
+            name: res.profileObj.name, //name: res.w3.ig,
             provider: 'google',
-            email: res.w3.U3,
-            provider_id: res.El,
-            token: res.Zi.access_token,
-            provider_pic: res.w3.Paa
+            email: res.profileObj.email, //email: res.w3.U3,
+            provider_id: res.googleId,//provider_id: res.El,
+            token: res.accessToken,//token: res.Zi.access_token,
+            provider_pic: res.profileObj.imageUrl,//provider_pic: res.w3.Paa
         }
         console.log(postData)
         // build our user data
