@@ -34,7 +34,7 @@ class Editor extends Component {
     formdata.append('description', this.state.description)
     formdata.append('claps', 0)
     console.log("formdata",formdata)
-    axios.post(`${_url}article`,formdata).then((res) => {
+    axios.post(`${_url}/article`,formdata).then((res) => {
       this.setState({
         loading: false
       })
