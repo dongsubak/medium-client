@@ -31,7 +31,7 @@ export function getUserProfile(_id) {
 
 export function getArticle(article_id) {
   return (dispatch) => {
-    axios.get(`${url}article/${article_id}`)
+    axios.get(`${url}articleview/${article_id}`)
     .then((res) => {
       let article = res.data
       dispatch({type:'VIEW_ARTICLE', article})
